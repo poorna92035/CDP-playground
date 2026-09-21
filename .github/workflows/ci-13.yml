@@ -1,4 +1,4 @@
-name: CI
+name: Dmaas-api-backend
 
 on:
   push:
@@ -106,7 +106,7 @@ jobs:
           polaris_assessment_types: "SAST"
 
   prisma-iac-scan:
-    name: Prisma Cloud IaC Scan (Checkov)
+    name: Prisma Dockerfile Scan
     runs-on: ubuntu-latest
     needs: unit-tests
     # Optional secret: PRISMA_CLOUD_API_TOKEN (full Prisma Cloud platform
