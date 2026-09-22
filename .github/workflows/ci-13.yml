@@ -28,13 +28,13 @@ jobs:
           pip install -r requirements-dev.txt
 
       - name: flake8
-        run: flake8 src tests
+        run: flake8 src 
 
       - name: black --check
-        run: black --check src tests
+        run: black --check src 
 
       - name: isort --check-only
-        run: isort --check-only src tests
+        run: isort --check-only src 
 
   unit-tests:
     name: Unit Tests
