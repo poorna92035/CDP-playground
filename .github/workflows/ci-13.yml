@@ -68,25 +68,25 @@ jobs:
   # it tells you exactly which secret is still missing. Required secrets are
   # listed above each job.
 
-/*  nexus-iq:
-    name: Nexus IQ (dependency/OSS scan)
-    runs-on: ubuntu-latest
-    needs: unit-tests
+# nexus-iq:
+  #  name: Nexus IQ (dependency/OSS scan)
+   # runs-on: ubuntu-latest
+   # needs: unit-tests
     # Required secrets: NEXUS_IQ_SERVER_URL, NEXUS_IQ_USERNAME, NEXUS_IQ_PASSWORD
     # Required var:     NEXUS_IQ_APPLICATION_ID
-    steps:
-      - uses: actions/checkout@v4
+ #   steps:
+ #     - uses: actions/checkout@v4
 
-      - name: Run Nexus IQ scan
-        uses: sonatype-nexus-community/iq-github-action@v2
-        with:
-          serverUrl: ${{ secrets.NEXUS_IQ_SERVER_URL }}
-          username: ${{ secrets.NEXUS_IQ_USERNAME }}
-          password: ${{ secrets.NEXUS_IQ_PASSWORD }}
-          application: ${{ vars.NEXUS_IQ_APPLICATION_ID }}
-          stage: build
-          target: "."
-*/
+ #     - name: Run Nexus IQ scan
+ #       uses: sonatype-nexus-community/iq-github-action@v2
+#        with:
+#          serverUrl: ${{ secrets.NEXUS_IQ_SERVER_URL }}
+#          username: ${{ secrets.NEXUS_IQ_USERNAME }}
+#          password: ${{ secrets.NEXUS_IQ_PASSWORD }}
+ #         application: ${{ vars.NEXUS_IQ_APPLICATION_ID }}
+#          stage: build
+#          target: "."
+
   build:
     name: Build (Docker image from Dockerfile)
     runs-on: ubuntu-latest
